@@ -1,0 +1,19 @@
+{
+    "name": "vendor/shcms",
+    "description": "Blog cms",
+    "authors": [
+        {
+            "name": "Maxim Shablinskiy",
+            "email": "maxshabl@yandex.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Engine\\": "engine",
+            "Front\\": "front",
+            "Admin\\": "admin",
+            "Core\\": "engine/core"
+        }
+    }
+}
