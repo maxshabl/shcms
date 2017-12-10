@@ -9,7 +9,7 @@
  */
 return [
     'services' => [
-        'database' => [
+        'DatabaseProvider' => [
             'mysql' => [
             'name' => 'db1',
             'user' => 'root',

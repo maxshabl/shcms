@@ -22,9 +22,4 @@ interface ProviderInterface
      * @return ServiceInterface
      */
     public function getService(string $serviceName): ServiceInterface;
-
-    /**
-     * @return array
-     */
-    public function getServices(): array;
 }

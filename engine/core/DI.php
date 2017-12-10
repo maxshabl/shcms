@@ -25,5 +25,4 @@ class DI
     {
         return self::$container[$key];
     }
-
 }

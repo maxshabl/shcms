@@ -2,8 +2,8 @@
 
 namespace Core\Provider;
 
+use Core\DI;
 use Core\Service\ServiceInterface;
-
 
 /**
  * Class AbstractProvider
@@ -39,24 +39,9 @@ abstract class AbstractProvider implements ProviderInterface
      */
     public function setService(string $serviceName, ServiceInterface $service): ServiceInterface
     {
-        $this->services[$serviceName] = $service;
+        $di = new DI();
+        $di->set($serviceName, $service);
         return $this->services[$serviceName];
     }
 
-    /**
-     * @param string $serviceName
-     * @return ServiceInterface
-     */
-    public function getService(string $serviceName): ServiceInterface
-    {
-        return $this->services[$serviceName];
-    }
-
-    /**
-     * @return array
-     */
-    public function getServices(): array
-    {
-        return $this->services;
-    }
 }
