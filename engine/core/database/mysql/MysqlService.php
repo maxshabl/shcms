@@ -12,11 +12,6 @@ class MysqlService implements ServiceInterface
 {
 
     /**
-     * @var array
-     */
-    private $config;
-
-    /**
      * @var PDO
      */
     private $connect;
@@ -25,6 +20,7 @@ class MysqlService implements ServiceInterface
      * @var
      */
     private $request;
+
 
 
     /**
@@ -46,16 +42,7 @@ class MysqlService implements ServiceInterface
         }
     }
 
-    /**
-     * @return $this
-     */
-    private function connect()
-    {
-        $dsn = 'mysql:host='.$this->config->host.';dbname='.$this->config->db_name.
-            ';charset='.$this->config['charset'];
-        $this->connect = new \PDO($dsn, $this->config['username'], $this->config['password']);
-        return $this;
-    }
+
 
     /**
      * Запрос.
