@@ -1,8 +1,8 @@
 <?php
 
-namespace Core;
+namespace Engine;
 
-use Core\Service\ServiceInterface;
+use Engine\ServiceInterface;
 
 /**
  * Class DI
