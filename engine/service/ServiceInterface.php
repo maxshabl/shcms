@@ -4,5 +4,5 @@ namespace Engine\Service;
 
 interface ServiceInterface
 {
-    public function init();
+    public function init(array $config);
 }

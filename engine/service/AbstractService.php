@@ -4,9 +4,9 @@ namespace Engine\Service;
 
 use Engine\DI;
 
-abstract class AbstractService
+abstract class AbstractService implements ServiceInterface
 {
-    private $di;
+    protected $di;
 
     public function __construct(DI $di)
     {

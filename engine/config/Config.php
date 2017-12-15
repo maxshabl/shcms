@@ -8,7 +8,7 @@ use Engine\Service\ServiceInterface;
  * Class ConfigService
  * @package Engine\Config
  */
-class ConfigService implements ServiceInterface
+class Config
 {
     /**
      * @var
@@ -103,7 +103,9 @@ class ConfigService implements ServiceInterface
         $this->services[$name] = $service;
     }
 
-
+    public function extract()
+    {}
+    
     /**
      * @return $this
      */
