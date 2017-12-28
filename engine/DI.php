@@ -2,7 +2,7 @@
 
 namespace Engine;
 
-use Engine\ServiceInterface;
+use Engine\Service\ServiceInterface;
 
 /**
  * Class DI

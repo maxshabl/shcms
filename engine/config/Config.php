@@ -71,7 +71,7 @@ class Config
      */
     public function __construct(array $config)
     {
-        $this->services = $config['serviceInstances'];
+        $this->services = $config['services'];
         $this->layout = $config['layout'];
         $this->basePath = $config['basePath'];
         $this->indexPath = $config['indexPath'];
