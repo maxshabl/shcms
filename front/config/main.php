@@ -1,21 +1,27 @@
 <?php
-
-/*
- * services - list of services
- * database - provider name,
- * mysql - service name
- * name - example class name, if you need make more then one
- *
- */
+/** Сервисы, попадающие в контейнер при запуске приложения*/
 return [
     'services' => [
-        'DatabaseProvider' => [
-            'mysql' => [
-            'name' => 'db1',
+        [
+            'provider' => Engine\Db\DbService::class,
+            'key' => 'mysql1',
             'user' => 'root',
             'password' => '',
             'dsn' => ''
-            ],
         ],
+        [
+            'provider' => Engine\Db\DbService::class,
+            'key' => 'postgre1',
+            'user' => 'root',
+            'password' => '',
+            'dsn' => ''
+        ],
+        [
+            'provider' => Engine\Db\DbService::class,
+            'key' => 'sqlite1',
+            'user' => 'root',
+            'password' => '',
+            'dsn' => ''
+        ]
     ]
 ];

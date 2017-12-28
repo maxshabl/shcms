@@ -2,8 +2,6 @@
 
 namespace Engine\Config;
 
-use Engine\Service\ServiceInterface;
-
 /**
  * Class ConfigService
  * @package Engine\Config
@@ -18,7 +16,7 @@ class Config
     /**
      * @var
      */
-    private $pathIndex;
+    private $indexPath;
 
     /**
      * @var
@@ -34,20 +32,10 @@ class Config
     /**
      * @return string
      */
-    public function getPathIndex() : string
+    public function getIndexPath() : string
     {
-        return $this->pathIndex;
+        return $this->indexPath;
     }
-
-
-    /**
-     * @param string $pathIndex
-     */
-    public function setPathIndex(string $pathIndex)
-    {
-        $this->pathIndex = $pathIndex;
-    }
-
 
     /**
      * @return string
@@ -55,15 +43,6 @@ class Config
     public function getBasePath() : string
     {
         return $this->basePath;
-    }
-
-
-    /**
-     * @param string $basePath
-     */
-    public function setBasePath(string $basePath)
-    {
-        $this->basePath = $basePath;
     }
 
 
@@ -76,14 +55,6 @@ class Config
     }
 
 
-    /**
-     * @param string $layout
-     */
-    public function setLayout(string $layout)
-    {
-        $this->layout = $layout;
-    }
-
 
     /**
      * @return array
@@ -95,22 +66,14 @@ class Config
 
 
     /**
-     * @param string $name
-     * @param array $service
+     * Config constructor.
+     * @param array $config
      */
-    public function setServices(string $name, array $service)
+    public function __construct(array $config)
     {
-        $this->services[$name] = $service;
-    }
-
-    public function extract()
-    {}
-    
-    /**
-     * @return $this
-     */
-    public function init()
-    {
-        return $this;
+        $this->services = $config['serviceInstances'];
+        $this->layout = $config['layout'];
+        $this->basePath = $config['basePath'];
+        $this->indexPath = $config['indexPath'];
     }
 }
